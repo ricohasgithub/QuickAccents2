@@ -1,5 +1,7 @@
 
-console.log("INJECTING SCRIPT")
+console.log("INJECTING SCRIPT");
+document.body.style.backgroundColor = 'orange';
+
 // Listen for hotkey shortcut command
 chrome.runtime.onMessage.addListener(function(message) {
     console.log("COPY REQUEST RECEIVED");
