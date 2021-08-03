@@ -6,10 +6,10 @@ async function getCurrentTab() {
     return tab;
 }
 
-function injectedFunction () {
+function injectedFunction_egrave () {
     let input = document.createElement('textarea');
     document.body.appendChild(input);
-    input.value = "e";
+    input.value = "è";
     input.focus();
     input.select();
     document.execCommand("copy");
@@ -25,7 +25,7 @@ chrome.commands.onCommand.addListener((e_grave) => {
         console.log(tab);
         chrome.scripting.executeScript({
             target: { tabId: tab.id },
-            function: injectedFunction
+            function: injectedFunction_egrave
         });
     });
 
