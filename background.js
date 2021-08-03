@@ -1,5 +1,5 @@
 
 // Listen for hotkey shortcut command
-// chrome.commands.onCommand.addListener((short_open) => {
-//     console.log(`Command: ${short_open}`);
-// });
+chrome.commands.onCommand.addListener((e_grave) => {
+    console.log("Hello world!");
+});

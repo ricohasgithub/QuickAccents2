@@ -15,10 +15,15 @@
         "default_popup": "src/html/popup.html"
     },
     "commands": {
+        "e_grave": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+1"
+            },
+            "description": "Copies to e grave accent to your clipboard"
+        },
         "_execute_action": {
             "suggested_key": {
-                "default": "Ctrl+Shift+Q",
-                "mac": "Command+Shift+Q"
+                "default": "Ctrl+Shift+K"
             }
         }
     }
