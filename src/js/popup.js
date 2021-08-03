@@ -135,3 +135,16 @@ function clearRoot () {
   }
 
 }
+
+chrome.runtime.onMessage.addListener(function(message) {
+  console.log("COPY REQUEST RECEIVED")
+  if (message && message.type == 'copy') {
+      let input = document.createElement('textarea');
+      document.body.appendChild(input);
+      input.value = message.text;
+      input.focus();
+      input.select();
+      document.execCommand('Copy');
+      input.remove();
+  }
+});
