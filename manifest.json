@@ -3,6 +3,11 @@
     "description": "Get accents delivered",
     "version": "1.0",
     "manifest_version": 3,
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "scripting"
+    ],
     "background": {
         "service_worker": "background.js"
     },
