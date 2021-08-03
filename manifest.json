@@ -17,13 +17,13 @@
     "commands": {
         "e_grave": {
             "suggested_key": {
-                "default": "Ctrl+Shift+1"
+                "default": "Ctrl+Shift+K"
             },
             "description": "Copies to e grave accent to your clipboard"
         },
         "_execute_action": {
             "suggested_key": {
-                "default": "Ctrl+Shift+K"
+                "default": "Ctrl+Shift+Q"
             }
         }
     }

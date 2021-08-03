@@ -41,6 +41,8 @@ const noResults = new Array("No Results");
 
 window.addEventListener('load', function(evt) {
 
+  document.getElementById("input_field").focus();
+
   document.getElementById("input_field").onkeyup = function() {
     let inputValue = document.getElementById("input_field").value;
     displaySearchQuery(inputValue);

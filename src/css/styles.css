@@ -14,7 +14,13 @@
     background-color: orange;
 }
 
-p {
+.search {
     font-family: 'Helvetica', 'Arial', sans-serif;
-    font-size: 10;
+    font-size: 20vh;
+    font-weight: 600;
+}
+
+body {
+    min-height: 20vh;
+    min-width: 20vw;
 }
