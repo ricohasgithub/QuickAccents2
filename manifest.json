@@ -4,14 +4,22 @@
     "version": "1.0",
     "manifest_version": 3,
     "background": {
-        "service_worker": "src/js/background.js"
-    },
-    "action": {
-        "default_popup": "src/html/popup.html"
+        "service_worker": "background.js"
     },
     "icons": {
         "16": "assets/icon16.png",
         "48": "assets/icon48.png",
         "128": "assets/icon128.png"
+    },
+    "action": {
+        "default_popup": "src/html/popup.html"
+    },
+    "commands": {
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+Q",
+                "mac": "Command+Shift+Q"
+            }
+        }
     }
   }
