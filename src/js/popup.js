@@ -38,6 +38,7 @@ const cQueryLow = new Array("ç");
 
 // No results search query display Array
 const noResults = new Array("No Results");
+let currQuery = [];
 
 window.addEventListener('load', function(evt) {
 
@@ -50,6 +51,27 @@ window.addEventListener('load', function(evt) {
 
 });
 
+document.addEventListener('keydown', logKey);
+
+function logKey(e) {
+  e = e || window.event;
+  keyInt = parseInt(e.key);
+  if (currQuery.length >= keyInt) {
+    copyText(currQuery[keyInt - 1]);
+  }
+  document.getElementById("input_field").focus();
+}
+
+function copyText (input) {
+  let rootNode = document.getElementById("root");
+  let temp = document.createElement("textarea");
+  temp.value = input;
+  rootNode.appendChild(temp);
+  temp.select();
+  document.execCommand("copy");
+  rootNode.removeChild(temp);
+}
+
 function displaySearchQuery (input) {
 
   // Clear the current root div
@@ -59,34 +81,49 @@ function displaySearchQuery (input) {
 
   // Display prompts
   if (input === "A") {
+    currQuery = aQueryUp;
     appendQueryResultsToRoot(rootNode, aQueryUp);
   } else if (input === "a") {
+    currQuery = aQueryLow;
     appendQueryResultsToRoot(rootNode, aQueryLow);
   } else if (input === "E") {
+    currQuery = eQueryUp;
     appendQueryResultsToRoot(rootNode, eQueryUp);
   } else if (input === "e") {
+    currQuery = eQueryLow;
     appendQueryResultsToRoot(rootNode, eQueryLow);
   } else if (input === "I") {
+    currQuery = iQueryUp;
     appendQueryResultsToRoot(rootNode, iQueryUp);
   } else if (input === "i") {
+    currQuery = iQueryLow;
     appendQueryResultsToRoot(rootNode, iQueryLow);
   } else if (input === "O") {
+    currQuery = oQueryUp;
     appendQueryResultsToRoot(rootNode, oQueryUp);
   } else if (input === "o") {
+    currQuery = oQueryLow;
     appendQueryResultsToRoot(rootNode, oQueryLow);
   } else if (input === "U") {
+    currQuery = uQueryUp;
     appendQueryResultsToRoot(rootNode, uQueryUp);
   } else if (input === "u") {
+    currQuery = uQueryLow;
     appendQueryResultsToRoot(rootNode, uQueryLow);
   } else if (input === "Y") {
+    currQuery = yQueryUp;
     appendQueryResultsToRoot(rootNode, yQueryUp);
   } else if (input === "y") {
+    currQuery = yQueryLow;
     appendQueryResultsToRoot(rootNode, yQueryLow);
   } else if (input == "C") {
+    currQuery = cQueryUp;
     appendQueryResultsToRoot(rootNode, cQueryUp);
   } else if (input == "c") {
+    currQuery = cQueryLow;
     appendQueryResultsToRoot(rootNode, cQueryLow);
   } else {
+    currQuery = [];
     appendQueryResultsToRoot(rootNode, noResults);
   }
 
